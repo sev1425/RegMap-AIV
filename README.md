@@ -238,5 +238,5 @@ Response includes full MAPs, risks, departments, and compliance score.
 
 **Team:** RegMap AI  
 **GitHub:** [github.com/sev1425/RegMap-AIV](https://github.com/sev1425/RegMap-AIV)  
-**Email:** sevanthi1415@gmail.com
+**Email:**  contact@regmap.ai
 
