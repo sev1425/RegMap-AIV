@@ -1,0 +1,24 @@
+name: Docker Build
+
+on:
+  push:
+    branches: [ "master", "main" ]
+  pull_request:
+    branches: [ "master", "main" ]
+
+jobs:
+  docker-build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Build Docker Compose Services
+      run: docker-compose -f docker-compose.yml build
+      
+    - name: Test backend container can start
+      run: |
+        docker-compose -f docker-compose.yml up -d backend
+        sleep 10
+        docker ps | grep backend
+        docker-compose down

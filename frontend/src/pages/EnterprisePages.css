@@ -1,0 +1,206 @@
+/* Enterprise Pages — shared styles */
+
+/* ── Page header ─────────────────────────────────────── */
+.enterprise-page-header {
+  margin-bottom: 24px;
+}
+.enterprise-page-header h1 {
+  font-size: 1.375rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.03em;
+  margin-bottom: 4px;
+}
+.enterprise-page-header p {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+/* ── Cards ────────────────────────────────────────────── */
+.enterprise-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 20px 24px;
+  margin-bottom: 16px;
+  transition: border-color 0.2s;
+}
+.enterprise-card:hover { border-color: var(--border-medium); }
+
+.enterprise-card-header {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-primary);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ── Grid layouts ─────────────────────────────────────── */
+.enterprise-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.enterprise-grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+.enterprise-grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+@media (max-width: 900px) {
+  .enterprise-grid-3 { grid-template-columns: 1fr 1fr; }
+  .enterprise-grid-4 { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+  .enterprise-grid-2, .enterprise-grid-3, .enterprise-grid-4 { grid-template-columns: 1fr; }
+}
+
+/* ── KPI card ─────────────────────────────────────────── */
+.kpi-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: all 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+.kpi-card:hover { border-color: var(--border-medium); transform: translateY(-2px); }
+.kpi-card-value { font-size: 2rem; font-weight: 800; letter-spacing: -0.04em; line-height: 1; }
+.kpi-card-label { font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-tertiary); }
+
+/* ── State panels ─────────────────────────────────────── */
+.state-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 320px;
+  gap: 12px;
+  text-align: center;
+  padding: 48px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  margin-top: 20px;
+}
+.state-panel h2 { font-size: 1.25rem; font-weight: 700; color: var(--text-primary); }
+.state-panel h3 { font-size: 1.125rem; font-weight: 700; color: var(--text-primary); }
+.state-panel p  { color: var(--text-secondary); font-size: 0.875rem; max-width: 400px; }
+
+/* ── Spinner ──────────────────────────────────────────── */
+.enterprise-spinner {
+  width: 40px; height: 40px;
+  border: 3px solid var(--border-light);
+  border-top-color: var(--accent-primary);
+  border-radius: 50%;
+  animation: enterprise-spin 0.8s linear infinite;
+}
+@keyframes enterprise-spin { to { transform: rotate(360deg); } }
+
+/* ── AI Agent overlay ─────────────────────────────────── */
+.ai-agent-overlay {
+  position: fixed; inset: 0;
+  background: rgba(6, 12, 26, 0.85);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 9999;
+  backdrop-filter: blur(4px);
+}
+.ai-agent-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-xl);
+  padding: 36px;
+  max-width: 480px;
+  width: 100%;
+  box-shadow: var(--shadow-xl);
+}
+
+/* ── Tags / Chips ─────────────────────────────────────── */
+.chip {
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 3px 8px; border-radius: 4px;
+  font-size: 0.6875rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.05em;
+}
+.chip-critical { background: rgba(239,68,68,0.12); color: #ef4444; border: 1px solid rgba(239,68,68,0.3); }
+.chip-high     { background: rgba(249,115,22,0.12); color: #f97316; border: 1px solid rgba(249,115,22,0.3); }
+.chip-medium   { background: rgba(234,179,8,0.12);  color: #eab308; border: 1px solid rgba(234,179,8,0.3); }
+.chip-low      { background: rgba(16,185,129,0.12); color: #10b981; border: 1px solid rgba(16,185,129,0.3); }
+.chip-pending  { background: rgba(239,68,68,0.08);  color: #ef4444; border: 1px solid rgba(239,68,68,0.2); }
+.chip-complete { background: rgba(16,185,129,0.08); color: #10b981; border: 1px solid rgba(16,185,129,0.2); }
+.chip-progress { background: rgba(249,115,22,0.08); color: #f97316; border: 1px solid rgba(249,115,22,0.2); }
+
+/* ── Upload zone ──────────────────────────────────────── */
+.upload-zone {
+  border: 2px dashed var(--border-medium);
+  border-radius: var(--radius-xl);
+  padding: 64px 40px;
+  text-align: center;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+.upload-zone:hover, .upload-zone.dragging {
+  border-color: var(--accent-primary);
+  background: var(--accent-subtle);
+}
+
+/* ── Timeline ─────────────────────────────────────────── */
+.timeline-item {
+  display: flex;
+  gap: 16px;
+  padding-bottom: 20px;
+  position: relative;
+}
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: 19px; top: 36px; bottom: 0;
+  width: 1px;
+  background: var(--border-light);
+}
+.timeline-item:last-child::before { display: none; }
+.timeline-dot {
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  border: 2px solid;
+}
+.timeline-content { flex: 1; padding-top: 4px; }
+
+/* ── Progress bar ─────────────────────────────────────── */
+.progress-bar {
+  height: 4px;
+  background: var(--bg-tertiary);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-top: 6px;
+}
+.progress-fill {
+  height: 100%;
+  border-radius: 2px;
+  transition: width 1s ease;
+}
+
+/* ── Copilot ──────────────────────────────────────────── */
+.copilot-message-user {
+  background: var(--accent-subtle);
+  border: 1px solid var(--border-medium);
+  border-radius: 12px 12px 4px 12px;
+  padding: 12px 16px;
+  align-self: flex-end;
+  max-width: 80%;
+  font-size: 0.875rem;
+  color: var(--text-primary);
+}
+.copilot-message-ai {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-light);
+  border-radius: 4px 12px 12px 12px;
+  padding: 12px 16px;
+  align-self: flex-start;
+  max-width: 85%;
+  font-size: 0.875rem;
+  color: var(--text-primary);
+  line-height: 1.6;
+}

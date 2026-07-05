@@ -1,0 +1,17 @@
+# Virtual environments
+venv/
+.venv/
+env/
+__pycache__/
+*.pyc
+
+# Database
+regmap.db
+test_audit.db
+
+# Generated outputs
+uploads/exports/
+uploads/evidence/
+
+# Ignore local config
+.env

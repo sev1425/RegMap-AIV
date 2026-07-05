@@ -1,0 +1,153 @@
+.regulations-page {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.regulations-header {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.dropzone-card {
+  padding: 40px;
+  text-align: center;
+  margin: 0 auto;
+  max-width: 800px;
+  width: 100%;
+}
+
+.dropzone-area {
+  border: 2px dashed var(--border-medium);
+  border-radius: 16px;
+  padding: 60px 40px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background-color: var(--bg-primary);
+}
+
+.dropzone-area:hover, .dropzone-area.dragging {
+  border-color: var(--accent-primary);
+  background-color: var(--accent-subtle);
+}
+
+.dropzone-icon {
+  color: var(--accent-primary);
+  margin-bottom: 24px;
+}
+
+.supported-formats {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.format-badge {
+  background-color: var(--bg-tertiary);
+  color: var(--text-secondary);
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border: 1px solid var(--border-light);
+}
+
+/* File Selected State */
+.file-selected {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.file-info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 24px;
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+}
+
+.file-icon-container {
+  width: 64px;
+  height: 64px;
+  background-color: var(--accent-subtle);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+/* Results State */
+.results-container {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.results-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32px;
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.result-card {
+  padding: 24px;
+}
+
+.result-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.result-item {
+  padding: 16px;
+  border-radius: 8px;
+  background-color: var(--bg-primary);
+  border-left: 4px solid var(--border-medium);
+}
+
+.result-item.high {
+  border-left-color: var(--danger);
+  background-color: var(--danger-subtle);
+}
+
+.result-item.medium {
+  border-left-color: var(--warning);
+  background-color: var(--warning-subtle);
+}
+
+@media (max-width: 1024px) {
+  .results-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .results-grid {
+    grid-template-columns: 1fr;
+  }
+  .results-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+}

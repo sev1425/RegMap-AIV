@@ -1,0 +1,22 @@
+.layout {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  background: #060c1a;
+}
+.layout-right {
+  flex: 1;
+  margin-left: 260px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.layout-content {
+  flex: 1;
+  padding: 80px 28px 32px;
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+}
+@media (max-width: 1200px) { .layout-right { margin-left: 72px; } }
+@media (max-width: 768px)  { .layout-right { margin-left: 0; } .layout-content { padding: 80px 16px 24px; } }

@@ -1,0 +1,10 @@
+name: General Discussion
+description: General topics about RegMap AI
+body:
+  - type: textarea
+    id: discussion
+    attributes:
+      label: What's on your mind?
+      description: Share your thoughts, questions, or ideas.
+    validations:
+      required: true
